@@ -14,8 +14,9 @@
                     <div class="form-group">
                         <input formControlName="firstname" type="text" id="firstname" class="form-control input--style-3" [value]="fname" placeholder="First name">
                         <div *ngIf="f.firstname.touched && f.firstname.invalid" class="alert alert-danger">
-                            <div *ngIf="f.firstname.errors && f.firstname.errors.required" class="sp">First name is required.</div>
-                            <div *ngIf="f.firstname.errors && f.firstname.errors.minlength" class="sp">First name should be 3 character.</div>
+                            <div *ngIf="f.firstname.errors && f.firstname.errors.required" class="sp">First name is required!</div>
+                            <div *ngIf="f.firstname.errors && f.firstname.errors.pattern" class="sp">Enter valid first name(only alphabets allowed)</div>
+                            <div *ngIf="f.firstname.errors && f.firstname.errors.minlength" class="sp">First name should be minimum 3 characters!</div>
                         </div>
                     </div>
                 
@@ -32,17 +33,24 @@
                         <input formControlName="mobile" type="tel" id="mobile" class="form-control input--style-3" placeholder="Mobile no"> 
                         <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert alert-danger">
                             <div *ngIf="f.mobile.errors && f.mobile.errors.required" class="sp">Mobile no is required.</div>
-                            <div *ngIf="f.mobile.errors && f.mobile.errors.minlength" class="sp">Mobile no should be 10 digits.</div>
-                   
+                            <div *ngIf="f.mobile.errors && f.mobile.errors.minlength" class="sp">Mobile no should be 10 digits.</div> 
+                            <div *ngIf="f.mobile.errors && f.mobile.errors.maxlength" class="sp">Mobile no should be 10 digits.</div> 
+                            
                         </div>
                     </div>
                     
                     
                     
-                  
+                    <div class="row">    
+                        <div class="col-4">
+                            <button color="info" class="btn" block="true" (click)="navigateToHome()"><i class="fa fa-arrow-left"></i></button>
+                        </div>
+                        <div class="col-6">
+                            <button [disabled]="!form.valid"  color="info" block="true" class="btn btn--pill btn--green" type="submit">Submit</button>
+                        </div>
+                    </div>
                     <!-- Sign in button -->
-                    <button  color="info" block="true" class="btn btn--pill btn--green" type="submit">Submit</button>
-                  
+                    
                     
                   </form>
             </div>

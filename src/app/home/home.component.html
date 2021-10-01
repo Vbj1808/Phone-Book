@@ -11,17 +11,18 @@
         <option value='mobileNumber'> phone number </option>
     </select>
 </div> -->
+<div class="page">
 <div class="jumbotron text-center">
     <h1 class="display-4"><i class="fa fa-address-book fa-big"></i>  PHONE BOOK</h1>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-9">
+        <div class="col-9 bg">
             <h3>Contacts</h3>
         </div>
         <div class="col-2">
-            <button class="btn btn-primary" (click)="addContact()"><i class="fa fa-plus"></i></button> 
+            <button class="btn btn-bg" (click)="addContact()"><i class="fa fa-plus"></i></button> 
         </div>
     </div>
     <div class="row height d-flex justify-content-center align-items-center">
@@ -59,7 +60,7 @@
 </div>
 </div>
 </div>
-
+</div>
 <!-- <div *ngFor="let user of userContact | filter:searchedKeyword; let rowindex=index ">
     
     <p>{{rowindex+1}}}</p>

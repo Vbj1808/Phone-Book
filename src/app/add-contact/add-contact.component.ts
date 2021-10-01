@@ -27,7 +27,7 @@ export class AddContactComponent implements OnInit {
   
   form = new FormGroup({
     firstname: new FormControl('',[Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]*$')]),
-    lastname: new FormControl('', [Validators.required]),
+    lastname: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]*$')]),
     mobile: new FormControl('', [Validators.required, Validators.minLength(10),Validators.maxLength(10)])
   })
   
@@ -58,9 +58,9 @@ export class AddContactComponent implements OnInit {
     console.log("hello");
     this.contactDetail = this.contactService.curUser(this._routeParams.snapshot.params.id);
     this.form = new FormGroup({
-      firstname: new FormControl(this.contactDetail['firstname'],[Validators.required, Validators.minLength(3)]),
-      lastname: new FormControl(this.contactDetail['lastname'], [Validators.required]),
-      mobile: new FormControl(this.contactDetail['mobile'], [Validators.required, Validators.minLength(10)])
+      firstname: new FormControl(this.contactDetail['firstname'],[Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]*$')]),
+      lastname: new FormControl(this.contactDetail['lastname'], [Validators.required, Validators.pattern('^[a-zA-Z]*$')]),
+      mobile: new FormControl(this.contactDetail['mobile'], [Validators.required, Validators.minLength(10),Validators.maxLength(10)])
     })
   }
     // console.log(this.fname);
@@ -102,6 +102,10 @@ export class AddContactComponent implements OnInit {
         alert("Phone Number already exists... Try another number");
       }
       }
+    }
+
+    navigateToHome = () => {
+      return this.router.navigateByUrl("/");
     }
 
 }
