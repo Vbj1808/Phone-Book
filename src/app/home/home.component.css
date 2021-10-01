@@ -1,0 +1,50 @@
+.container{
+    width: 100%;
+}
+
+.jumbotron{
+    padding: 2%;
+    margin-bottom: 4%;
+    /* margin: 4%; */
+    color: #d6d4d4;
+    background-color: #000;
+}
+
+.custom-card{
+    padding: 2%;
+    /* margin: 2%; */
+    border-radius: 0%;
+    margin-left: 4.25%;
+    margin-right: 4.25%;
+    background-color:antiquewhite
+}
+
+.search {
+    position: relative;
+    margin-bottom: 2%;
+    /* border-radius: 0%; */
+    /* box-shadow: 0 0 40px rgba(51, 51, 51, .1) */
+}
+
+.search input {
+    border-radius: 0%;
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid blue
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px
+}
+
+
+/* .custom-btn1{
+    margin-left: 50%;
+} */

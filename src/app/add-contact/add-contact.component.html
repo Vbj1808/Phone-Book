@@ -1,0 +1,57 @@
+<!-- <p>add-contact works!</p> -->
+<!-- Default form login -->
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w780">
+        <div class="card card-3">
+            <div class="card-heading"></div>
+            <div class="card-body">
+                <h2 class="title">Add Contact</h2>
+                <form [formGroup]="form" class="text-center border border-light p-5" (ngSubmit)="onSubmit()">
+
+                    <!-- <p class="h4 mb-4">Add Contact</p> -->
+                  
+                    <!-- First Name -->
+                    <div class="form-group">
+                        <input formControlName="firstname" type="text" id="firstname" class="form-control input--style-3" [value]="fname" placeholder="First name">
+                        <div *ngIf="f.firstname.touched && f.firstname.invalid" class="alert alert-danger">
+                            <div *ngIf="f.firstname.errors && f.firstname.errors.required" class="sp">First name is required.</div>
+                            <div *ngIf="f.firstname.errors && f.firstname.errors.minlength" class="sp">First name should be 3 character.</div>
+                        </div>
+                    </div>
+                
+                    <!-- Last Name -->
+                    <div class="form-group">
+                        <input formControlName="lastname" type="text" id="lastname" class="form-control input--style-3" placeholder="Last Name" >
+                        <div *ngIf="f.lastname.touched && f.lastname.invalid" class="alert alert-danger">
+                            <div *ngIf="f.lastname.errors && f.lastname.errors.required" class="sp">Last name is required.</div>
+                        </div>
+                    </div>
+                    
+                
+                    <div class="form-group">
+                        <input formControlName="mobile" type="tel" id="mobile" class="form-control input--style-3" placeholder="Mobile no"> 
+                        <div *ngIf="f.mobile.touched && f.mobile.invalid" class="alert alert-danger">
+                            <div *ngIf="f.mobile.errors && f.mobile.errors.required" class="sp">Mobile no is required.</div>
+                            <div *ngIf="f.mobile.errors && f.mobile.errors.minlength" class="sp">Mobile no should be 10 digits.</div>
+                   
+                        </div>
+                    </div>
+                    
+                    
+                    
+                  
+                    <!-- Sign in button -->
+                    <button  color="info" block="true" class="btn btn--pill btn--green" type="submit">Submit</button>
+                  
+                    
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+  <!-- Default form login -->

@@ -1,0 +1,74 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  
+<!-- <button class="btn btn-primary" (click)="orderByNameAsc()">Sort</button> -->
+<!-- <input type="text" class="form-control" placeholder="Enter keyword to filter the record" [(ngModel)]="searchedKeyword">
+
+<div>
+    <label for="sort" >Sort By</label>
+    <select name="sort" id="sort" [(ngModel)]="sortby" (change)="sort()" value="sort by?">
+        <option value='firstName' >First Name </option>
+        <option value='lastName'>Last Name</option>
+        <option value='mobileNumber'> phone number </option>
+    </select>
+</div> -->
+<div class="jumbotron text-center">
+    <h1 class="display-4"><i class="fa fa-address-book fa-big"></i>  PHONE BOOK</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-9">
+            <h3>Contacts</h3>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary" (click)="addContact()"><i class="fa fa-plus"></i></button> 
+        </div>
+    </div>
+    <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-9">
+            <div class="search"> <i class="fa fa-search"></i><input type="text" class="form-control" placeholder="Enter keyword to filter the record" [(ngModel)]="searchedKeyword">
+            </div>
+        </div>
+        <div class="col-2">
+            <!-- <label for="sort" >Sort By</label> -->
+            <select class="form-select form-select-lg mb-3" name="sort" id="sort" [(ngModel)]="sortby" (change)="sort()" value="sort by?">
+                <option selected>{{sortby}}</option>
+                <option value='firstName' >First Name </option>
+                <option value='lastName'>Last Name</option>
+                <option value='mobileNumber'> phone number </option>
+            </select>
+        </div>
+    </div>
+    <div class="col-12">
+    <div *ngFor="let user of userContact | filter:searchedKeyword; let rowindex=index ">
+    <div class="card custom-card container-fluid" style="width: auto;">
+        <div class="row">
+            <div class="col-10">
+                <h5 class="card-title">{{user.firstname.charAt(0).toUpperCase() + user.firstname.slice(1) + " " + user.lastname.charAt(0).toUpperCase() + user.lastname.slice(1)}}</h5>
+                <p class="card-text"><i class="fas fa-phone-alt"></i>{{" "+user.mobile}}</p>  
+            </div>
+            <div class="col-1">
+                <button class="custom-btn1" (click)="updateContact(user.mobile)"><i class="fas fa-edit"></i></button>
+            </div>
+            <div class="col-1">
+                <button class="custom-btn1" (click)="removeContact(rowindex)"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+
+<!-- <div *ngFor="let user of userContact | filter:searchedKeyword; let rowindex=index ">
+    
+    <p>{{rowindex+1}}}</p>
+    <p>{{user.firstname}}</p>
+    <p>{{user.lastname}}</p>
+    <p>{{user.mobile}}</p>
+    <button class="btn btn-primary" (click)="removeContact(rowindex)">Remove</button>
+    <button class="btn btn-primary" (click)="updateContact(user.mobile)">Update</button>
+</div>
+<button class="btn btn-primary" (click)="addContact()">Add Contact</button> -->
+
+<!-- <a [routerLink] = "['/addContact']" [queryParams]="{[update: string]: false}">Add</a> -->
